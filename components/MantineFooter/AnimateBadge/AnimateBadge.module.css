@@ -8,7 +8,7 @@
 .badgeNew::after {
   position: absolute;
   inset: 0;
-  border: 2px solid var(--badge-bg, var(--mantine-color-red-filled));
+  border: 2px solid var(--badge-bg, #D94A55);
   border-radius: inherit;
   content: '';
   opacity: 0;

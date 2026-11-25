@@ -1,13 +1,13 @@
 import { BorderAnimate } from '@gfazioli/mantine-border-animate';
-import { IconBrandMantine, IconMarkdown, IconSearch } from '@tabler/icons-react';
+import { IconBrandNextjs, IconMarkdown, IconSearch } from '@tabler/icons-react';
 import { site } from '@/config/site';
 import classes from './DocsWindow.module.css';
 import home from './Home.module.css';
 
-const NAV = ['Getting started', 'Markdown', 'Mantine', 'Components', 'Guides', 'Release notes'];
+const NAV = ['Getting started', 'Contract management', 'Invoice drafting', 'Installment tracking', 'Release notes'];
 const TOC = ['Install', 'Write a page', 'Add a component', 'Deploy'];
 
-/* A light that runs round the window's rim, in the template's own two colours: a conic gradient
+/* A light that runs round the window&apos;s rim, in TradeFlow NL&apos;s own two colours: a conic gradient
    the extension turns with a transform, so the only thing animated is a rotation on the
    compositor. */
 const BEAM = [
@@ -19,7 +19,7 @@ const BEAM = [
 ];
 
 /**
- * What the template gives you, drawn rather than photographed: a docs page (sidebar, article,
+ * What TradeFlow NL gives you, drawn rather than photographed: a docs page (sidebar, article,
  * code, table of contents) tilted in space, made of markup and CSS, and dimensioned like a part
  * on a drawing: a line along its width and one along its height, two callouts, and the plane it
  * stands on. No image to download, and it follows the colour scheme. Decorative, so hidden from
@@ -108,7 +108,11 @@ export function DocsWindow() {
         </BorderAnimate>
       </div>
       <span className={classes.chip} data-chip="mantine">
-        <IconBrandMantine size={16} />
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="16" height="16" rx="4" fill="#0D2340" />
+          <path d="M5 3h2v2H5zM5 7h2v2H5zM5 11h2v2H5zM5 15h2v2H5zM10 3h1v2h-1zM10 7h1v2h-1zM10 11h1v2h-1zM10 15h1v2h-1zM13 3h1v2h-1zM13 7h1v2h-1zM13 11h1v2h-1zM13 15h1v2h-1z" fill="#F36C21" />
+          <path d="M11 3h1v2h-1zM11 7h1v2h-1zM11 11h1v2h-1zM11 15h1v2h-1z" fill="#A9DCEB" />
+        </svg>
         100% Mantine
       </span>
       <span className={classes.chip} data-chip="engine">

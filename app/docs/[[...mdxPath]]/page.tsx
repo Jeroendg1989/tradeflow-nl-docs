@@ -1,8 +1,10 @@
-import { generateStaticParamsFor, importPage } from 'nextra/pages';
+import { importPage } from 'nextra/pages';
 import { useMDXComponents } from '../../../mdx-components';
+import { notFound } from 'next/navigation';
 
-export const generateStaticParams = generateStaticParamsFor('mdxPath');
+export const dynamic = 'force-dynamic';
 export const revalidate = false;
+export const generateStaticParams = async () => [];
 
 export async function generateMetadata(props: any) {
   const params = await props.params;
@@ -10,11 +12,21 @@ export async function generateMetadata(props: any) {
   return metadata;
 }
 
-const Wrapper = useMDXComponents().wrapper;
-
 export default async function Page(props: any) {
   const params = await props.params;
-  const result = await importPage(params.mdxPath);
+  const Wrapper = useMDXComponents().wrapper;
+
+  let result;
+  try {
+    result = await importPage(params.mdxPath);
+  } catch {
+    notFound();
+  }
+
+  if (!result) {
+    notFound();
+  }
+
   const { default: MDXContent, toc, metadata } = result;
 
   const customToc = [...toc, ...((metadata as any)?.toc || [])];

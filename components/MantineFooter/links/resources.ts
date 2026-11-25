@@ -1,22 +1,22 @@
 export const resources = [
   {
-    key: 'mantine-discord',
-    title: 'Mantine Discord',
+    key: 'tradeflow-discord',
+    title: 'TradeFlow Discord',
     href: 'https://discord.gg/wbH82zuWMN',
   },
   {
-    key: 'mantine-components',
-    title: 'Mantine Components',
-    href: 'https://mantine.dev/getting-started/',
+    key: 'tradeflow-components',
+    title: 'TradeFlow Components',
+    href: 'https://tradeflow-fresh.vercel.app/',
   },
   {
-    key: 'mantine-ui',
-    title: 'Mantine UI',
+    key: 'tradeflow-ui',
+    title: 'TradeFlow UI',
     href: 'https://ui.mantine.dev/',
   },
   {
-    key: 'mantine-help',
-    title: 'Mantine Help Center',
+    key: 'tradeflow-help',
+    title: 'TradeFlow Help Center',
     href: 'https://help.mantine.dev/',
   },
 ];

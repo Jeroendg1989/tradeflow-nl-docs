@@ -1,9 +1,7 @@
 import {
-  IconBrandMantine,
   IconBrandNextjs,
   IconBrandReact,
-  IconBrandStorybook,
-  IconBrandTypescript,
+  IconBrandMantine,
   IconMarkdown,
 } from '@tabler/icons-react';
 import { revealItem } from '@/components/Motion/reveal-props';
@@ -23,19 +21,17 @@ const CORE = [
   { label: 'React', name: 'react', icon: IconBrandReact },
   { label: 'Mantine', name: '@mantine/core', icon: IconBrandMantine },
   { label: site.engineName, name: site.enginePackage, icon: IconMarkdown },
-  { label: 'TypeScript', name: 'typescript', icon: IconBrandTypescript },
-  { label: 'Storybook', name: 'storybook', icon: IconBrandStorybook },
 ];
 
 /** A declared range as the number it starts from: "^10.6.7" is shown as "10.6.7". */
 export function plainVersion(range: string) {
-  return range.replace(/^[\^~>=<\s]+/, '');
+  return range.replace(/^[\\^~>=<\\s]+/, '');
 }
 
 /**
  * The versions the template runs on. Nothing here is typed by hand: every number is read from
  * `package.json` when the site is built, so the page cannot fall behind the code it ships with.
- * The six it stands on get a figure each, which rolls up like an odometer as it scrolls into
+ * The four it stands on get a figure each, which rolls up like an odometer as it scrolls into
  * view; every other dependency follows as a tag, with the range exactly as declared.
  */
 export function Stack() {

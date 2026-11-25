@@ -21,7 +21,7 @@
   }
 }
 
-/* The three templates, a card each; the current one is tinted in its engine's colour. */
+/* The templates, a card each; the current one is tinted in its engine's colour. */
 .grid {
   --marks-gap: rem(8px);
 
@@ -44,8 +44,8 @@
 }
 
 .card {
-  --engine-from: var(--mantine-color-blue-7);
-  --engine-to: var(--mantine-color-cyan-7);
+  --engine-from: #F36C21;
+  --engine-to: #A9DCEB;
 
   display: flex;
   flex-direction: column;
@@ -58,16 +58,6 @@
   transition:
     transform 200ms ease,
     border-color 200ms ease;
-
-  &[data-engine='nextra'] {
-    --engine-from: var(--mantine-color-violet-7);
-    --engine-to: var(--mantine-color-grape-6);
-  }
-
-  &[data-engine='fumadocs'] {
-    --engine-from: var(--mantine-color-orange-8);
-    --engine-to: var(--mantine-color-pink-7);
-  }
 
   &:hover {
     border-color: color-mix(in srgb, var(--engine-from) 70%, transparent);

@@ -1,4 +1,4 @@
-import { templateList, type TemplateKey } from '@/config/templates';
+import { templates, type TemplateKey } from '@/config/templates';
 import { mantineComponentCategories } from '../MantineFooter/links';
 
 /**
@@ -99,7 +99,7 @@ export async function getHomeStats(): Promise<HomeStats> {
   const [downloads, stars] = await Promise.all([
     getDownloads(),
     Promise.all(
-      templateList.map(async (template) => [template.key, await getStars(template.repo)] as const)
+      Object.entries(templates).map(async ([key, template]) => [key, await getStars(template.repo)] as const)
     ),
   ]);
   return {

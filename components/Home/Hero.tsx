@@ -10,10 +10,10 @@ import classes from './Hero.module.css';
 import home from './Home.module.css';
 
 /**
- * The hero: which template this is in one line (the engine is the word in colour), what it gives
- * in one paragraph, the two ways in (the docs, or the repository to start from, with the version
- * it is at), the command that clones it, and a docs page drawn as the thing you get. A thin frame
- * with a registration mark at each corner (`sheet`) makes it the first sheet of the drawing.
+ * TradeFlow NL hero: what we do in one line, what it gives in one paragraph, the two ways in
+ * (the docs, or the repository to start from), the command that clones it, and a docs page drawn
+ * as the thing you get. A thin frame with a registration mark at each corner (`sheet`) makes it
+ * the first sheet of the drawing.
  *
  * The headline is the page's largest paint: it is plain text, on screen from the first frame,
  * and nothing in this column animates in.
@@ -32,7 +32,7 @@ export function Hero({ badge, stars }: { badge?: React.ReactNode; stars?: number
           <IconArrowRight size={14} aria-hidden="true" />
         </Link>
         <h1 className={classes.title}>
-          Mantine Next.js <span className={classes.engine}>+&nbsp;{site.engine}</span> template
+          TradeFlow NL <span className={classes.engine}>docs</span> template
         </h1>
         <p className={classes.lead}>{site.lead}</p>
         <div className={classes.actions}>

@@ -8,24 +8,24 @@
   justify-content: center;
 
   @mixin light {
-    border-color: var(--mantine-color-gray-3);
-    color: var(--mantine-color-gray-7);
-    background-color: var(--mantine-color-white);
+    border-color: var(--site-rule);
+    color: var(--site-text);
+    background-color: var(--site-surface);
 
     @mixin hover {
-      background-color: var(--mantine-color-gray-0);
+      background-color: var(--site-surface);
     }
   }
 
-  /* Mantine's default-variant colours (dark.6, dark.4, dark.5), by their variables: the home
-     page redraws them for its paper, see theme/site.css. */
+  /* TradeFlow NL colours by their variables: the home page redraws them for its paper,
+     see theme/site.css. */
   @mixin dark {
-    border-color: var(--mantine-color-default-border);
-    color: var(--mantine-color-white);
-    background-color: var(--mantine-color-default);
+    border-color: var(--site-rule);
+    color: var(--site-text);
+    background-color: var(--site-surface);
 
     @mixin hover {
-      background-color: var(--mantine-color-default-hover);
+      background-color: var(--site-surface);
     }
   }
 }

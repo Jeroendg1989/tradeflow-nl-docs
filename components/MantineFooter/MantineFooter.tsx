@@ -2,27 +2,16 @@
 
 import {
   IconBrandGithub,
-  IconBrandMantine,
-  IconBrandNextjs,
-  IconBrandX,
   IconMailHeart,
 } from '@tabler/icons-react';
 import { site } from '@/config/site';
 import pack from '../../package.json';
 import { AnimateBadge } from './AnimateBadge';
-import {
-  apps,
-  highlights,
-  mantineComponentCategories,
-  resources,
-  templateLinks,
-  type FooterLink,
-} from './links';
+import { apps, highlights, mantineComponentCategories, resources, templateLinks, type FooterLink } from './links';
 import classes from './MantineFooter.module.css';
 
 const SOCIAL = [
-  { label: 'GitHub', href: 'https://github.com/gfazioli', icon: IconBrandGithub },
-  { label: 'X (Twitter)', href: 'https://twitter.com/gfazioli', icon: IconBrandX },
+  { label: 'GitHub', href: 'https://github.com/Jeroendg1989', icon: IconBrandGithub },
   { label: 'Blog', href: 'https://undolog.com/', icon: IconMailHeart },
 ];
 
@@ -58,13 +47,7 @@ function Column({ title, list }: { title: string; list: FooterLink[] }) {
 }
 
 /**
- * The site footer, the same in the three sibling templates: the project, the three templates
- * (this one marked), the Mantine links and the author's apps; every Mantine extension by
- * category; the colophon.
- *
- * A client component on purpose: it is on every page, and as a server component its hundred
- * links travelled twice in each document, as markup and again in the RSC payload (5.4 KiB
- * gzipped, measured). As client code they travel once more only in a script that is cached.
+ * TradeFlow NL footer: light navy ground, Dutch Orange links, clean typography.
  */
 export const MantineFooter = () => {
   return (
@@ -73,14 +56,18 @@ export const MantineFooter = () => {
         <div className={classes.top}>
           <div className={classes.brand}>
             <span className={classes.logo} aria-hidden="true">
-              <IconBrandMantine size={24} stroke={1.6} />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="6" fill="#0D2340" />
+                <path d="M6 4h4v2h-6zM6 8h4v2h-6zM6 12h4v2h-6zM6 16h4v2h-6zM6 20h4v2h-6zM14 4h2v2h-2zM14 8h2v2h-2zM14 12h2v2h-2zM14 16h2v2h-2zM14 20h2v2h-2z" fill="#F36C21" />
+                <path d="M17 4h2v2h-2zM17 8h2v2h-2zM17 12h2v2h-2zM17 16h2v2h-2zM17 20h2v2h-2z" fill="#A9DCEB" />
+              </svg>
             </span>
             <p className={classes.name}>{site.name}</p>
             <p className={classes.blurb}>
               {site.tagline} Free and open source:{' '}
               <a href={`https://github.com/${site.repo}`}>star it on GitHub</a>,{' '}
               <a href={`https://github.com/${site.repo}/issues`}>report an issue</a> or{' '}
-              <a href="https://github.com/sponsors/gfazioli">sponsor the work</a>.
+              <a href="https://github.com/sponsors/Jeroendg1989">sponsor the work</a>.
             </p>
             <ul className={classes.social}>
               {SOCIAL.map(({ label, href, icon: Icon }) => (
@@ -93,14 +80,14 @@ export const MantineFooter = () => {
             </ul>
           </div>
 
-          <Column title="Templates" list={templateLinks} />
+          <Column title="Documentation" list={templateLinks} />
           <Column title="Highlights" list={highlights} />
-          <Column title="Mantine" list={resources} />
+          <Column title="Resources" list={resources} />
           <Column title="Apps" list={apps} />
         </div>
 
         <div className={classes.extensions}>
-          <h2 className={classes.title}>Mantine Extensions</h2>
+          <h2 className={classes.title}>TradeFlow NL Docs</h2>
           <div className={classes.categories}>
             {mantineComponentCategories.map((category) => (
               <nav key={category.key} aria-label={category.title} className={classes.column}>
@@ -114,30 +101,22 @@ export const MantineFooter = () => {
         <div className={classes.colophon}>
           <p className={classes.credits}>
             Made with ❤️ by <a href="https://gfazioli.github.io/">Undolog</a>
-            <span className={classes.dot} aria-hidden="true">
-              ·
-            </span>
+            <span className={classes.dot} aria-hidden="true">·</span>
             Hosted on <a href={site.host.href}>{site.host.name}</a>
-            <span className={classes.dot} aria-hidden="true">
-              ·
-            </span>
+            <span className={classes.dot} aria-hidden="true">·</span>
             Built with{' '}
             <a href="https://nextjs.org/" className={classes.built}>
-              <IconBrandNextjs size={15} aria-hidden="true" />
               Next.js
             </a>
             ,{' '}
             <a href="https://mantine.dev/" className={classes.built}>
-              <IconBrandMantine size={15} aria-hidden="true" />
               Mantine v{pack.dependencies['@mantine/core']}
-            </a>{' '}
+            </a>
             and {site.engineName}
           </p>
           <p className={classes.credits}>
             v{pack.version}
-            <span className={classes.dot} aria-hidden="true">
-              ·
-            </span>
+            <span className={classes.dot} aria-hidden="true">·</span>
             <a href={`https://github.com/${site.repo}/blob/main/LICENCE`}>MIT licence</a>
           </p>
         </div>

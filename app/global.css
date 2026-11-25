@@ -5,8 +5,6 @@
  *
  * You can add your own custom styles here. This file will be imported after the theme styles.
  * This is a great place to add your own utility classes or override styles.
- *
- * In this case we're going to fix a glitch with the text size in the code blocks. 
  */
 @layer overwrite {
   html {
@@ -22,20 +20,20 @@
     line-height: var(--tw-leading, var(--x-text-sm--line-height)) !important;
   }
 
-  /* Active sidebar link in Mantine's "light" blue, as on mantine.dev. */
+  /* Active sidebar link in TradeFlow's Dutch Orange. */
   .x\:bg-primary-100 {
-    background-color: var(--mantine-color-blue-light) !important;
+    background-color: var(--mantine-color-orange-light) !important;
   }
 
   .x\:text-primary-800 {
-    color: var(--mantine-color-blue-light-color) !important;
+    color: var(--mantine-color-orange-8-color) !important;
   }
 
   nav.nextra-toc {
     li {
       a.x\:text-primary-600 {
         position: relative;
-        color: var(--mantine-color-blue-6) !important;
+        color: var(--mantine-color-orange-6) !important;
       }
 
       a.x\:text-primary-600::before {
@@ -43,7 +41,7 @@
         display: block;
         width: 2px;
         height: 100%;
-        background: var(--mantine-color-blue-6);
+        background: var(--mantine-color-orange-6);
         position: absolute;
         left: -8px;
         top: 0;
@@ -54,33 +52,16 @@
 }
 
 /*
- * The home page's paper (theme/site.css) under Nextra's own chrome. Nextra paints the page, the
- * navbar and the sidebar from `--nextra-bg`, a red, green, blue triplet its <Head> writes in an
- * unlayered style: so these rules are unlayered too, and outweigh it by their selector. One per
- * paper and scheme, the same colour as `--mantine-color-body` there: keep the two in step.
+ * TradeFlow NL paper under Nextra's own chrome. Nextra paints the page, the navbar and the
+ * sidebar from `--nextra-bg`, a red, green, blue triplet its <Head> writes in an unlayered
+ * style: so these rules are unlayered too, and outweigh it by their selector.
  */
 :root[data-mantine-color-scheme='light']:has([data-site-paper]) {
-  --nextra-bg: 231, 239, 249;
+  --nextra-bg: 243, 246, 248;
 }
 
 :root[data-mantine-color-scheme='dark']:has([data-site-paper]) {
-  --nextra-bg: 10, 26, 48;
-}
-
-:root[data-mantine-color-scheme='light']:has([data-site-paper='violet']) {
-  --nextra-bg: 237, 235, 250;
-}
-
-:root[data-mantine-color-scheme='dark']:has([data-site-paper='violet']) {
-  --nextra-bg: 18, 15, 43;
-}
-
-:root[data-mantine-color-scheme='light']:has([data-site-paper='orange']) {
-  --nextra-bg: 248, 239, 229;
-}
-
-:root[data-mantine-color-scheme='dark']:has([data-site-paper='orange']) {
-  --nextra-bg: 26, 18, 12;
+  --nextra-bg: 13, 35, 64;
 }
 
 @layer components, mantine, nextra, overwrite;

@@ -1,4 +1,4 @@
-/* The page takes Mantine's own body colours (#fff / #242424), as mantine.dev does. */
+/* TradeFlow NL body colours: Harbour White in light, Port Navy in dark. */
 html {
   background-color: var(--mantine-color-body);
 }
@@ -7,13 +7,7 @@ body {
   background-color: transparent;
 }
 
-/* Headings in Outfit, as on mantine.dev: Mantine's Title gets it from the theme, the MDX
-   headings rendered by Nextra from here. */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--mantine-font-family-headings);
+/* Headings in Instrument Serif. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-instrument-serif);
 }

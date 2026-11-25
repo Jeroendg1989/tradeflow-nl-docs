@@ -25,7 +25,7 @@ function Card({
 }: {
   template: Template;
   current: boolean;
-  /** The repository's GitHub stars: left out when the count could not be fetched */
+  /** The repository&apos;s GitHub stars: left out when the count could not be fetched */
   stars?: number;
 }) {
   return (
@@ -84,10 +84,10 @@ function Card({
 }
 
 /**
- * The three sibling templates side by side: the same design on three engines, the one you are
- * looking at marked and lit, the other two a click away. Two arcs struck beside the heading, as
- * with a compass, are the section's construction lines. Each card carries its repository's GitHub
- * stars, when they could be fetched.
+ * The templates side by side: the same design on each, the one you are looking at marked and
+ * lit, the others a click away. Two arcs struck beside the heading, as with a compass, are the
+ * section&apos;s construction lines. Each card carries its repository&apos;s GitHub stars, when they
+ * could be fetched.
  */
 export function Templates({ stars = {} }: { stars?: HomeStats['stars'] }) {
   return (
@@ -115,7 +115,7 @@ export function Templates({ stars = {} }: { stars?: HomeStats['stars'] }) {
       <RevealScope as="ul" className={`${home.marks} ${classes.grid}`}>
         {templateList.map((template, i) => {
           const current = template.key === site.key;
-          // The light on the current card's rim, in that engine's colours: a conic gradient
+          // The light on the current card&apos;s rim, in that engine&apos;s colours: a conic gradient
           // the extension turns with a transform.
           const [from, to] = template.beam;
           return (

@@ -11,32 +11,18 @@ import { Templates } from './Templates';
 import classes from './Home.module.css';
 
 /**
- * The home page, in the order it argues: which template this is (the hero), what it runs on (the
- * stack, read from package.json), what it gives (the features), its two siblings (the
- * templates), the components it is made to host (the extensions), who supports the work (the
- * sponsors), and the way in again. The same component in the three sibling templates: what
- * differs comes from `config/site.ts`.
+ * TradeFlow NL home page: which we do (the hero), what we run on (the stack), what we give
+ * (the features), who supports us (sponsors), and the way in again. The same component shape as
+ * the template: what differs comes from `config/site.ts`.
  *
  * A server component: only the islands that move or react are client code. The sections under
  * the stack are left out of the first render and handed back once the page has loaded
- * (`RenderLater`): the hero paints sooner on a slow phone. It renders no
- * `<main>` of its own, since one engine's layout already provides it: `app/page.tsx` does.
+ * (`RenderLater`). It renders no `<main>` of its own, since `app/page.tsx` provides it.
  *
- * `data-site-paper` is what turns the document to drawing paper, header and footer included, and
- * its value is which paper (`site.paper`: blue, violet or orange): see theme/site.css.
- *
- * `badge` is a slot under the hero's actions, for a launch badge. `stats` are the live numbers
- * (GitHub stars, npm downloads): the page component awaits `getHomeStats()` and passes them in,
- * so this component stays synchronous. Without them, or without one of them, nothing is shown in
- * its place.
+ * `data-site-paper` turns the document to TradeFlow NL paper: header, navbar, sidebar, footer
+ * included, and its value is which paper (`site.paper`): see theme/site.css.
  */
-export function HomePage({
-  badge,
-  stats = NO_STATS,
-}: {
-  badge?: React.ReactNode;
-  stats?: HomeStats;
-}) {
+export function HomePage({ badge, stats = NO_STATS }: { badge?: React.ReactNode; stats?: HomeStats }) {
   return (
     <div className={classes.page} data-site-paper={site.paper}>
       <div className={classes.frame}>

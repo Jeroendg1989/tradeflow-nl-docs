@@ -1,8 +1,8 @@
 /*
- * The docs page of the hero: a window tilted in space and dimensioned like a part on a drawing,
- * with two callouts over its corners and the plane it stands on. The tilt is a static transform;
- * what moves (the window settling as the page opens, the callouts bobbing, the light on the rim)
- * moves by transform alone.
+ * TradeFlow NL docs page of the hero: a window tilted in space and dimensioned like a part on a
+ * drawing, with two callouts over its corners and the plane it stands on. The tilt is a static
+ * transform; what moves (the window settling as the page opens, the callouts bobbing, the light
+ * on the rim) moves by transform alone.
  */
 .stage {
   position: relative;
@@ -30,11 +30,7 @@
   pointer-events: none;
 }
 
-/*
- * A dimension line, tilted with the window it measures: two extension lines, the line between
- * them with an arrowhead at each end, and the figure. Along the width the line is broken round
- * the figure; along the height the figure stands beside it.
- */
+/* A dimension line, tilted with the window it measures. */
 .dim {
   --ink: var(--site-mark);
 
@@ -64,7 +60,8 @@
   left: 0;
   height: rem(28px);
   border-inline: 1px solid var(--ink);
-  background: linear-gradient(
+  background:
+    linear-gradient(
       90deg,
       var(--ink) calc(50% - rem(30px)),
       transparent calc(50% - rem(30px)) calc(50% + rem(30px)),
@@ -212,15 +209,15 @@
     width: rem(9px);
     height: rem(9px);
     border-radius: 50%;
-    background: #ff5f57;
+    background: #D94A55;
   }
 
   & i:nth-child(2) {
-    background: #febc2e;
+    background: #F9B184;
   }
 
   & i:nth-child(3) {
-    background: #28c840;
+    background: #4089C4;
   }
 }
 
@@ -279,8 +276,8 @@
   white-space: nowrap;
 
   &[data-active] {
-    background: var(--mantine-color-blue-light);
-    color: var(--mantine-color-blue-light-color);
+    background: var(--site-tint);
+    color: var(--site-accent);
   }
 }
 
@@ -301,7 +298,7 @@
   color: var(--site-ink);
   font-family: var(--mantine-font-family-headings);
   font-size: rem(17px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -329,17 +326,17 @@
   white-space: nowrap;
 
   & b {
-    color: light-dark(var(--mantine-color-grape-8), var(--mantine-color-grape-3));
+    color: #D95716;
     font-weight: 500;
   }
 
   & em {
-    color: light-dark(var(--mantine-color-teal-9), var(--mantine-color-teal-3));
+    color: #0891B2;
     font-style: normal;
   }
 
   & u {
-    color: light-dark(var(--mantine-color-blue-8), var(--mantine-color-blue-3));
+    color: #17395E;
     text-decoration: none;
   }
 }
@@ -350,9 +347,9 @@
   gap: rem(6px);
   margin-block: rem(2px);
   padding: rem(9px) rem(10px);
-  border-left: 3px solid var(--mantine-color-blue-filled);
+  border-left: 3px solid #F36C21;
   border-radius: rem(5px);
-  background: var(--mantine-color-blue-light);
+  background: #FFF0E6;
 }
 
 .toc {

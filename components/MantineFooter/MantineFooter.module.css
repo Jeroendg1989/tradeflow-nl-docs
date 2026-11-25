@@ -1,7 +1,7 @@
 /*
- * The site footer, the same in the three sibling templates. No drawn box: its own ground, a step
- * away from the page and fading in from it, quiet links that take the accent on hover, and
- * hairlines between its three tiers.
+ * TradeFlow NL site footer: light navy ground, Dutch Orange links, quiet text.
+ * No drawn box: its own ground, a step away from the page and fading in from it, quiet links
+ * that take the accent on hover, and hairlines between its three tiers.
  */
 .root {
   padding-top: rem(88px);
@@ -31,7 +31,6 @@
 
 .top {
   display: grid;
-  /* The templates' column is wide enough for the longest name and its "This site" mark. */
   grid-template-columns:
     minmax(0, 1.7fr) minmax(0, 1.2fr) minmax(0, 1.05fr) minmax(0, 1.05fr)
     minmax(0, 0.75fr);
@@ -53,14 +52,14 @@
   }
 }
 
-/* Mantine's mark, white on a tile of its blue to cyan. */
+/* TradeFlow NL's mark, white on a tile of Dutch Orange to Maritime Ice Blue. */
 .logo {
   display: grid;
   place-items: center;
   width: rem(40px);
   height: rem(40px);
   border-radius: rem(11px);
-  background: linear-gradient(135deg, var(--mantine-color-blue-7), var(--mantine-color-cyan-6));
+  background: linear-gradient(135deg, #0D2340, #F36C21);
   color: var(--mantine-color-white);
 }
 
@@ -69,7 +68,7 @@
   color: var(--site-ink);
   font-family: var(--mantine-font-family-headings);
   font-size: rem(17px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.3;
 }
 
@@ -104,7 +103,7 @@
     color 150ms ease;
 
   &:hover {
-    background: var(--mantine-color-default-hover);
+    background: var(--site-surface);
     color: var(--site-accent);
   }
 }
@@ -151,7 +150,7 @@
   }
 }
 
-/* Quiet at rest, the accent on hover: a column of blue links is the loudest thing in a footer. */
+/* Quiet at rest, the accent on hover. */
 .link {
   color: var(--site-text);
   font-weight: 500;

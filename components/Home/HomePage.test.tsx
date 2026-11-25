@@ -70,13 +70,11 @@ describe('HomePage', () => {
   });
 
   it('shows the live numbers it is given', () => {
-    const stars = { docs: 1, nextra: 38, fumadocs: 5 };
+    const stars = { nextra: 38 };
     render(<HomePage stats={{ stars, downloads: 309_494 }} />);
     const section = screen.getByRole('region', { name: /Pick the engine/ });
     // The figure, and the words a screen reader hears after it
-    expect(within(section).getByText('1')).toHaveTextContent('1 star on GitHub');
     expect(within(section).getByText('38')).toHaveTextContent('38 stars on GitHub');
-    expect(within(section).getByText('5')).toHaveTextContent('5 stars on GitHub');
     // The hero's star link carries this template's own count
     const star = screen.getByRole('link', { name: /^Star the .+ template on GitHub/ });
     expect(star).toHaveAttribute('href', `https://github.com/${site.repo}`);
@@ -100,9 +98,9 @@ describe('HomePage', () => {
     unmount();
 
     // One template's stars missing (a failed request): the other two are still there
-    render(<HomePage stats={{ stars: { nextra: 38, fumadocs: 5 } }} />);
+    render(<HomePage stats={{ stars: { nextra: 38 } }} />);
     const section = screen.getByRole('region', { name: /Pick the engine/ });
-    expect(within(section).getAllByText(/stars? on GitHub$/)).toHaveLength(2);
+    expect(within(section).getAllByText(/stars? on GitHub$/)).toHaveLength(1);
     expect(within(section).queryByText('0')).toBeNull();
     expect(screen.queryByText(/downloads last month/)).toBeNull();
   });

@@ -1,4 +1,4 @@
-import { IconBook, IconBrandGithub, IconBrandMantine } from '@tabler/icons-react';
+import { IconBook, IconBrandGithub } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
 import { Link } from '@/components/Link/Link';
 import { RENDER_LATER, revealItem } from '@/components/Motion/reveal-props';
@@ -10,8 +10,8 @@ import classes from './FinalCta.module.css';
 import home from './Home.module.css';
 
 /**
- * The closing call, the drawing's last sheet: the repository to start from, the docs, the command,
- * in a frame with its registration marks, over the circles a compass leaves round the logo.
+ * TradeFlow NL closing call: the repository to start from, the docs, the command, in a frame
+ * with its registration marks, over the circles a compass leaves round the logo.
  */
 export function FinalCta() {
   return (
@@ -22,7 +22,11 @@ export function FinalCta() {
     >
       <RevealScope className={`${home.marks} ${classes.inner}`}>
         <span {...revealItem('pop', 0, classes.logo)} aria-hidden="true">
-          <IconBrandMantine size={34} stroke={1.6} />
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="34" height="34" rx="8" fill="#0D2340" />
+            <path d="M9 6h4v3h-4zM9 10h4v3h-4zM9 14h4v3h-4zM9 18h4v3h-4zM9 22h4v3h-4zM22 6h2v3h-2zM22 10h2v3h-2zM22 14h2v3h-2zM22 18h2v3h-2zM22 22h2v3h-2z" fill="#F36C21" />
+            <path d="M25 6h2v3h-2zM25 10h2v3h-2zM25 14h2v3h-2zM25 18h2v3h-2zM25 22h2v3h-2z" fill="#A9DCEB" />
+          </svg>
         </span>
         <h2 id="start-title" {...revealItem('rise', 80, classes.title)}>
           Your docs, <span className={home.gradient}>live this afternoon</span>

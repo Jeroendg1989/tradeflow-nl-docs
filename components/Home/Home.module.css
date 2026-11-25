@@ -1,10 +1,9 @@
 /*
- * The home page's construction, the same in the three sibling templates: the page is a blueprint.
- * It opens on graph paper (fine lines, and a heavier one every fifth) that thins out down the
- * page until the paper is plain; every drawing on it (the hero, the stack, a group of cards)
- * carries a registration mark at each corner, and the labels are lettered in monospace capitals.
- * Colours come from theme/site.css, where the element carrying `data-site-paper` turns the whole
- * document to paper.
+ * TradeFlow NL home page construction: Harbour White ground, Dutch Orange ink.
+ * The same construction as the template: the page is drawing paper with construction lines,
+ * every drawing on it carries a registration mark at each corner, and the labels are lettered
+ * in monospace capitals. Colours come from theme/site.css, where the element carrying
+ * `data-site-paper` turns the whole document to TradeFlow NL paper.
  */
 
 .page {
@@ -16,12 +15,6 @@
   color: var(--site-text);
 }
 
-/*
- * The grid, a layer of its own over the upper part of the page: whole through the hero and the
- * stack, then covered little by little by the paper's own colour, which is all there is from its
- * end down. A gradient over the lines and not a mask: nothing is composited, and no content is
- * touched. The lines are centred, so they fall at the same distance from both edges of the frame.
- */
 .page::before {
   --paper: var(--mantine-color-body);
 
@@ -55,15 +48,12 @@
   margin-inline: auto;
 }
 
-/*
- * Registration marks: a cross centred on each corner of the element, as on a sheet that will be
- * trimmed. One layer of eight strokes, painted once. `--marks-gap` moves them off the corners.
- */
+/* Registration marks: a cross centred on each corner of the element, as on a sheet that will be
+   trimmed. One layer of eight strokes, painted once. `--marks-gap` moves them off the corners. */
 .marks {
   --marks-gap: 0px;
 }
 
-/* Weightless, so an element placed by its own class keeps its position. */
 :where(.marks) {
   position: relative;
 }
@@ -100,9 +90,7 @@
   }
 }
 
-/* A section below the fold stays out of the first render: the browser lays it out as the
-   reader approaches, or when RenderLater hands it back once the page has loaded. The intrinsic
-   size is its placeholder until then. */
+/* A section below the fold stays out of the first render. */
 .section[data-render='later']:not([data-rendered]) {
   content-visibility: auto;
   contain-intrinsic-size: auto rem(780px);
@@ -145,7 +133,7 @@
   margin: 0;
   color: var(--site-ink);
   font-size: clamp(rem(30px), 4vw, rem(46px));
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.03em;
   text-wrap: balance;
@@ -176,8 +164,7 @@
   }
 }
 
-/* A word of a heading in the two colours of the paper's ink: on blue paper, Mantine's blue to
-   cyan. */
+/* A word of a heading in TradeFlow NL&apos;s two colours: Dutch Orange to Maritime Ice Blue. */
 .gradient {
   background-image: linear-gradient(
     100deg,
@@ -187,14 +174,13 @@
   background-clip: text;
   color: transparent;
 
-  /* High contrast drops background images, and with them text painted by background-clip. */
   @media (forced-colors: active) {
     background: none;
     color: CanvasText;
   }
 }
 
-/* The page's buttons are Mantine's: these only add the lift and the two looks. */
+/* The page&apos;s buttons are Mantine&apos;s: these only add the lift and the two looks. */
 .button {
   transition:
     background-color 150ms ease,
@@ -218,8 +204,7 @@
   }
 }
 
-/* Filled, in the paper's ink, deep enough for white text (on blue paper blue.8, 5:1; Mantine's
-   blue.6 is 3.5:1). */
+/* Filled, in TradeFlow NL&apos;s Dutch Orange, under white text. */
 .primary {
   --button-bg: var(--site-fill);
   --button-hover: var(--site-fill-hover);
@@ -228,6 +213,7 @@
   box-shadow: 0 10px 24px -12px var(--site-fill);
 }
 
+/* Outlined, in Harbour White with Port Navy text. */
 .secondary {
   --button-bg: var(--site-surface);
   --button-hover: var(--site-surface);
@@ -267,12 +253,6 @@
   white-space: nowrap;
 }
 
-/*
- * The light on a BorderAnimate rim (the hero's window, the current template's card). With
- * `trigger="inView"` the extension shows and runs it only while it is on screen, fading it in and
- * out. It does not read Reduce Motion unless the theme sets `respectReducedMotion`: then the light
- * stands still and appears at once from here, as the extension does with that flag.
- */
 @media (prefers-reduced-motion: reduce) {
   .beam,
   .beam::after {

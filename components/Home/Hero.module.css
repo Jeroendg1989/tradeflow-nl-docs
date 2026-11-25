@@ -1,9 +1,10 @@
 /*
- * The hero, two columns: the copy on the left, a docs page on the right. Its ground is the paper,
- * with one light painted behind the drawing (no layer moves).
+ * TradeFlow NL hero: two columns - the copy on the left, a docs page on the right. Its ground is
+ * the paper, with one light painted behind the drawing (no layer moves).
  */
+
 .hero {
-  /* The engine's own colours, for the one word of the headline that names it. */
+  /* TradeFlow NL&apos;s own colours, for the one word of the headline that names it. */
   --engine-from: var(--site-gradient-from);
   --engine-to: var(--site-gradient-to);
 
@@ -20,20 +21,6 @@
     transparent 72%
   );
 
-  &[data-engine='nextra'] {
-    --engine-from: light-dark(var(--mantine-color-violet-8), var(--mantine-color-violet-4));
-    --engine-to: light-dark(var(--mantine-color-grape-7), var(--mantine-color-pink-4));
-    /* "+ Nextra template" is a few pixels wider than the column at full size: a step smaller,
-       and the headline keeps its two lines. */
-    --title-max: rem(68px);
-  }
-
-  &[data-engine='fumadocs'] {
-    --engine-from: light-dark(var(--mantine-color-orange-9), var(--mantine-color-orange-4));
-    --engine-to: light-dark(var(--mantine-color-pink-8), var(--mantine-color-pink-4));
-  }
-
-  /* One column: the light follows the drawing under the copy. */
   @media (max-width: $mantine-breakpoint-md) {
     --light: ellipse 64% 26% at 50% 76%;
 
@@ -47,8 +34,7 @@
   }
 }
 
-/* The sheet's edge: a hairline round the hero, with a registration mark at each corner. It
-   stands where the sections under it do, so the marks line up down the page. */
+/* The sheet&apos;s edge: a hairline round the hero, with a registration mark at each corner. */
 .sheet {
   position: absolute;
   inset: rem(36px) rem(48px) rem(28px);
@@ -110,19 +96,18 @@
   margin: 0;
   color: var(--site-ink);
   font-size: clamp(rem(42px), 5.6vw, var(--title-max, rem(72px)));
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
-/* The engine, in its own colours, on a line of its own where the measure allows. */
+/* The engine word, in TradeFlow NL&apos;s own colours, on a line of its own. */
 .engine {
   background-image: linear-gradient(100deg, var(--engine-from) 10%, var(--engine-to) 90%);
   background-clip: text;
   color: transparent;
 
-  /* High contrast drops background images, and with them text painted by background-clip. */
   @media (forced-colors: active) {
     background: none;
     color: CanvasText;
@@ -146,8 +131,8 @@
   margin-top: rem(32px);
 }
 
-/* The repository's stars, as a tag in two tones like the stack's: the word, and the figure in a
-   tinted end. A link to the repository, where the star is given. */
+/* The repository&apos;s stars, as a tag in two tones like the stack&apos;s: the word, and the figure
+   in a tinted end. */
 .star {
   display: inline-flex;
   overflow: hidden;

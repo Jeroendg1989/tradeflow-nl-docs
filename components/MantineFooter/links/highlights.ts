@@ -1,11 +1,11 @@
 import { HUB_URL } from '@/config/templates';
 
-/** The sibling templates have a column of their own, from `config/templates.ts`. */
+/** The TradeFlow docs hub and related resources. */
 export const highlights = [
   {
-    key: 'mantine-extensions',
-    title: 'Mantine Extensions Hub',
-    href: HUB_URL,
+    key: 'tradeflow-docs',
+    title: 'TradeFlow NL Docs',
+    href: 'https://tradeflow-fresh.vercel.app/',
   },
   {
     key: 'mantine-extension-template',

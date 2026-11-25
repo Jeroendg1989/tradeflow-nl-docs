@@ -1,102 +1,69 @@
 export default {
-  /**
-   * Nextra metadata configuration
-   * @see https://nextra.vercel.app/docs/metadata
-   */
   metadata: {
     title: {
-      default: 'Mantine Next.js and Nextra template',
-      template: '%s | Mantine Next.js and Nextra template',
+      default: 'TradeFlow NL Docs',
+      template: '%s | TradeFlow NL Docs',
     },
     description:
-      'A Next.js App Router starter with Mantine 9 and Nextra 4: an MDX documentation site with Mantine components, search, dark mode and release notes.',
-    metadataBase: new URL('https://next-app-nextra-template.vercel.app/'),
+      'TradeFlow NL documentation: embedded BNPL for Dutch logistics & trade-credit SMEs. Contract management, invoice drafting, and installment tracking with Mantine and Nextra.',
+    metadataBase: new URL('https://tradeflow-fresh.vercel.app/'),
     keywords: [
-      'Mantine',
+      'TradeFlow',
       'Nextra',
       'Next.js',
       'React',
-      'JavaScript',
-      'MDX',
-      'Markdown',
-      'Static Site Generator',
+      'Mantine',
+      'BNPL',
+      'logistics',
+      'Dutch',
+      'trade credit',
+      'documentation',
     ],
     generator: 'Next.js',
-    applicationName: 'Mantine',
+    applicationName: 'TradeFlow NL',
     appleWebApp: {
-      title: 'Mantine',
+      title: 'TradeFlow NL',
     },
     openGraph: {
-      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
       url: './',
-      siteName: 'Mantine',
-      locale: 'en_US',
+      siteName: 'TradeFlow NL',
+      locale: 'nl_NL',
       type: 'website',
     },
     other: {
-      'msapplication-TileColor': '#fff',
+      'msapplication-TileColor': '#0D2340',
     },
     twitter: {
-      site: 'https://next-app-nextra-template.vercel.app/',
+      site: 'https://tradeflow-fresh.vercel.app/',
     },
     alternates: {
-      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
       canonical: './',
     },
   },
-  /**
-   * Nextra Layout component configuration
-   */
   nextraLayout: {
-    docsRepositoryBase: 'https://github.com/gfazioli/next-app-nextra-template/tree/main/app/docs/',
+    docsRepositoryBase: 'https://github.com/Jeroendg1989/tradeflow-nl-docs/tree/main/app/docs/',
     sidebar: {
       defaultMenuCollapseLevel: 1,
     },
-    // Keep in step with `head.mantine.defaultColorScheme`: Nextra (next-themes) and Mantine
-    // each fall back to their own default on a first visit, and nothing reconciles them on load.
     nextThemes: {
       defaultTheme: 'light',
     },
   },
-  /**
-   * Main Layout head configuration
-   */
   head: {
     mantine: {
       defaultColorScheme: 'light',
       nonce: '8IBTHwOdqNKAWeKl7plt8g==',
     },
   },
-  /**
-   * GitHub API configuration
-   * @see https://docs.github.com/en/rest/reference/repos#releases
-   *
-   * The GitHub API token is optional for rate limiting.
-   * If you want to use it, create a read-only token: a fine-grained token with
-   * public repositories (read-only), or a classic token with no scopes.
-   *
-   * This information is used to fetch the releases from the GitHub API.
-   */
   gitHub: {
-    repo: 'gfazioli/next-app-nextra-template',
+    repo: 'Jeroendg1989/tradeflow-nl-docs',
     apiUrl: 'https://api.github.com',
-    releasesUrl: 'https://api.github.com/repos/gfazioli/next-app-nextra-template/releases',
+    releasesUrl: 'https://api.github.com/repos/Jeroendg1989/tradeflow-nl-docs/releases',
   },
-
-  /**
-   * Release notes configuration
-   * This is used to link the release notes in the app.
-   */
   releaseNotes: {
-    url: 'https://github.com/gfazioli/next-app-nextra-template/releases',
+    url: 'https://github.com/Jeroendg1989/tradeflow-nl-docs/releases',
     maxReleases: 10,
   },
-
-  /**
-   * Search configuration (for pagefind)
-   * This is used to configure the search engine API.
-   * @see /app/api/search/route.ts
-   */
   search: {
     queryKeyword: 'q',
     minQueryLength: 3,
@@ -104,6 +71,6 @@ export default {
     defaultMaxResults: 5,
     excerptLengthKeyword: 'excerptLength',
     defaultExcerptLength: 30,
-    defaultLanguage: 'en',
+    defaultLanguage: 'nl',
   },
 } as const;

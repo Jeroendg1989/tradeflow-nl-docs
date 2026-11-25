@@ -63,7 +63,7 @@
   }
 
   &[data-copied] {
-    color: light-dark(var(--mantine-color-green-9), var(--mantine-color-green-4));
+    color: #D95716;
   }
 
   &:focus-visible {

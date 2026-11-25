@@ -1,6 +1,7 @@
 /*
- * The closing call: a framed sheet, and inside it the circles a compass leaves round the logo,
- * with the two axes they were struck from. Painted once: nothing here moves but the content.
+ * TradeFlow NL closing call: a framed sheet, and inside it the circles a compass leaves round
+ * the logo, with the two axes they were struck from. Painted once: nothing here moves but the
+ * content.
  */
 .cta {
   padding-block: rem(88px) rem(112px);
@@ -37,11 +38,9 @@
   }
 }
 
-/*
- * The construction, a layer of its own inside the sheet, so its mask fades the lines and never
- * the content. Three fades, multiplied: away from the logo, toward the sheet's top edge, and
- * toward its two sides. The circles are gone before they reach an edge: nothing is clipped.
- */
+/* The construction, a layer of its own inside the sheet, so its mask fades the lines and never
+   the content. Three fades, multiplied: away from the logo, toward the sheet's top edge, and
+   toward its two sides. The circles are gone before they reach an edge: nothing is clipped. */
 .inner::after {
   position: absolute;
   inset: 0;
@@ -68,15 +67,15 @@
   pointer-events: none;
 }
 
-/* Mantine's mark on a tile of its own blue to cyan. */
+/* TradeFlow NL's mark on a tile of its own Dutch Orange to Maritime Ice Blue. */
 .logo {
   display: grid;
   place-items: center;
   width: rem(64px);
   height: rem(64px);
   border-radius: rem(18px);
-  background: linear-gradient(135deg, var(--mantine-color-blue-7), var(--mantine-color-cyan-6));
-  box-shadow: 0 18px 36px -16px var(--mantine-color-blue-7);
+  background: linear-gradient(135deg, #0D2340, #F36C21);
+  box-shadow: 0 18px 36px -16px #0D2340;
   color: var(--mantine-color-white);
 }
 
@@ -85,7 +84,7 @@
   margin: rem(24px) 0 0;
   color: var(--site-ink);
   font-size: clamp(rem(34px), 5vw, rem(60px));
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.04em;
   text-wrap: balance;

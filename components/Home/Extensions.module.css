@@ -72,7 +72,7 @@
   --marquee-play-state: paused;
 }
 
-/* An extension's name, with a dot in its category's colour. */
+/* An extension's name, with a dot in TradeFlow NL colours. */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -91,18 +91,18 @@
     width: rem(8px);
     height: rem(8px);
     border-radius: 50%;
-    background: var(--mantine-color-blue-6);
+    background: #F36C21;
   }
 
   &[data-category='data-display'] i {
-    background: var(--mantine-color-cyan-6);
+    background: #A9DCEB;
   }
 
   &[data-category='inputs-navigation'] i {
-    background: var(--mantine-color-violet-5);
+    background: #D95716;
   }
 
   &[data-category='effects-animations'] i {
-    background: var(--mantine-color-pink-5);
+    background: #D94A55;
   }
 }

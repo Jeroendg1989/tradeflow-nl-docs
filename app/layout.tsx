@@ -1,20 +1,9 @@
-import '@mantine/core/styles.css';
-// !! The order of these imports is important !!
-import '@gfazioli/mantine-border-animate/styles.css';
-import '@gfazioli/mantine-marquee/styles.css';
-import '@gfazioli/mantine-text-animate/styles.css';
-// Mantine theme overrides (page background, heading font)
-import '@/theme/global.css';
-// The site's own tokens: the home page and the footer are drawn with them
-import '@/theme/site.css';
-
-import { Analytics } from '@vercel/analytics/react';
-import { Outfit } from 'next/font/google';
+import type { Metadata } from 'next';
+import { Instrument_Serif, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { Layout } from 'nextra-theme-docs';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-// !! End of important imports !!
 
 import { MantineFooter, MantineNavBar } from '@/components';
 import config from '@/config';
@@ -25,30 +14,42 @@ import './global.css';
 
 export const metadata = config.metadata;
 
-// The type of mantine.dev: Outfit for headings (self-hosted and preloaded by Next), the system
-// stack for everything else, which is Mantine's default and costs no download at all.
-const outfit = Outfit({
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-outfit',
-  // Not preloaded: on a throttled phone the preload competed with the render-blocking CSS and
-  // moved the first paint by about 0.18 s. Headings paint in the size-adjusted fallback and swap.
-  preload: false,
+  weight: '400',
+  variable: '--font-instrument-serif',
 });
 
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-ibm-plex-sans',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-ibm-plex-mono',
+});
+
+export const dynamic = 'force-dynamic';
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const pageMap = await getPageMap();
+  let pageMap: any = [];
+  try {
+    pageMap = await getPageMap();
+  } catch {
+    pageMap = [];
+  }
   const { nextraLayout, head } = config;
 
   return (
-    <html lang="en" dir="ltr" className={outfit.variable} {...mantineHtmlProps}>
-      {/* Page background and primary colour of the Nextra theme, set to Mantine's: body
-          #fff / #242424 and blue.6 (#228be6) / blue.4 (#4dabf7), as on mantine.dev. */}
+    <html lang="nl" dir="ltr" className={`${instrumentSerif.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`} {...mantineHtmlProps}>
       <Head
-        backgroundColor={{ light: '#ffffff', dark: '#242424' }}
+        backgroundColor={{ light: '#F3F6F8', dark: '#0D2340' }}
         color={{
-          hue: { light: 208, dark: 207 },
-          saturation: { light: 80, dark: 91 },
+          hue: { light: 24, dark: 26 },
+          saturation: { light: 100, dark: 100 },
           lightness: { light: 52, dark: 64 },
         }}
       >
@@ -62,9 +63,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <MantineProvider theme={theme} defaultColorScheme={head.mantine.defaultColorScheme}>
           <Layout
             banner={
-              <Banner storageKey={`release-notes-${pack.version}`}>
-                ✨ v{pack.version} Released -{' '}
-                <a href="/docs/release-notes">See the release notes</a>
+              <Banner storageKey="tradeflow-release-notes">
+                ✨ TradeFlow NL Docs
               </Banner>
             }
             navbar={<MantineNavBar />}
@@ -77,7 +77,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             {children}
           </Layout>
         </MantineProvider>
-        <Analytics />
       </body>
     </html>
   );

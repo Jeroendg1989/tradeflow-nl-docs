@@ -13,10 +13,10 @@ export interface FooterLink {
   current?: boolean;
 }
 
-/** The three sibling templates at their live demos, this one marked: every footer lists them. */
+/** The TradeFlow docs at their live demos, this one marked: every footer lists them. */
 export const templateLinks: FooterLink[] = templateList.map((template) => ({
   key: template.key,
-  title: `Mantine + ${template.engine}`,
+  title: `TradeFlow ${template.engine}`,
   href: template.demo,
   current: template.key === site.key,
 }));
